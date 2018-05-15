@@ -1,0 +1,24 @@
+
+
+.customCSS{
+    border: 1px solid #ccc;
+    border-radius: 1pc;
+    margin-top: 20px;
+    display: inline-block;
+    height: 170px;
+}
+
+img{
+    height: 50px;
+    width: 50px;
+    margin-top: 25px;
+}
+
+.customCSS h3{
+
+}
+
+.customCSS p{
+font-size: 16px;
+}
+
