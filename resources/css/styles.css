@@ -8,7 +8,7 @@
     height: 170px;
 }
 
-img{
+.containerImg{
     height: 50px;
     width: 50px;
     margin-top: 25px;
@@ -20,5 +20,24 @@ img{
 
 .customCSS p{
 font-size: 16px;
+}
+
+@media only screen and (max-width: 720px) {
+
+    .customCSS h3, .customCSS p, .containerImg{
+        text-align: center;
+        margin: auto;
+        display: block;
+    }
+
+    .customCSS{
+        height: 120px; /*Use % instead */
+        width: 100%;
+    }
+
+    .containerImg{
+        margin-top: 10px;
+    }
+
 }
 
