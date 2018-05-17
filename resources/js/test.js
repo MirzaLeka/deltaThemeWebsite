@@ -1,3 +1,5 @@
-const name = "Sam Fisher";
+var name = "My Blog";
 
-console.log("My name is " + name);
+//document.getElementById("sisic").innerHTML = name;
+
+$("#sisic").html(name);

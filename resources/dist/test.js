@@ -1,0 +1,1 @@
+var name="My Blog";$("#sisic").html(name);
