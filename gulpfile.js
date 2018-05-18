@@ -5,6 +5,9 @@ const concat = require('gulp-concat');
 const minifyCss = require('gulp-minify-css');
 const gls = require('gulp-live-server');
 const htmlMin = require('gulp-htmlmin');
+const autoPrefixer = require('gulp-autoprefixer');
+const plumber = require('gulp-plumber');
+const sourcemaps = require('gulp-sourcemaps');
 
 const STYLES_PATH = 'resources/css/**/*.css';
 const SCRIPTS_PATH = 'resources/js/**/*.js'; // grabs js inside of folders inside of /js folder
@@ -26,8 +29,20 @@ gulp.task('styles', () => {
 console.log("Starting styles task"); /* To tun this task type gulp & name of the task, in this case styles, so it will be gulp styles  */
  
 return gulp.src(STYLES_PATH)
+		.pipe(plumber(function (err) { // we mistype something in css, plumber plugin will trigger and display where the error was
+			console.log('Styles Task Error'); 
+			console.log(err.toString()); // because we use plumber if we trigger an error it won't break our console any won't need to restart
+			this.emit('end');
+		}))
+        .pipe(sourcemaps.init()) // ** we initialize srouce maps befoe fixes and concat
+        .pipe(autoPrefixer({ // creates fixes for our css to fit every brwoser's needs
+    // browsers: ['last 2 versions', 'ie 8'] // or we can specifily say autoprefix Only for last 2 versions of all modern browsers
+})) // and also internet exp 8
 .pipe(concat('newstyle.css')) // name of the new file we're creating
 .pipe(minifyCss()) // this will compress our CSS file and remove all empty lines and spacing == better performance
+.pipe(sourcemaps.write()) // ** and we finish here before place compressed files into dist folder. 
+// With sourcemaps we can see original css maps in chrome dev tools (inspect) rather than seeing all compressed in
+// one folder, as we did in dist folder which we imported in index.html
 .pipe(gulp.dest(DEST_PATH))
 .pipe(liveReload());
 });
