@@ -8,6 +8,8 @@ const htmlMin = require('gulp-htmlmin');
 const autoPrefixer = require('gulp-autoprefixer');
 const plumber = require('gulp-plumber');
 const sourcemaps = require('gulp-sourcemaps');
+const del = require('del');
+const zip = require('gulp-zip');
 
 const STYLES_PATH = 'resources/css/**/*.css';
 const SCRIPTS_PATH = 'resources/js/**/*.js'; // grabs js inside of folders inside of /js folder
@@ -52,17 +54,39 @@ return gulp.src(STYLES_PATH)
 gulp.task("scripts", () => {
 console.log("Starting scripts task");
 
-return gulp.src(SCRIPTS_PATH). // all JS files resources/js/*.js  // replace with SCRIPTS_PATH
-pipe(uglify())
+return gulp.src(SCRIPTS_PATH) // all JS files resources/js/*.js  // replace with SCRIPTS_PATH
+	.pipe(plumber(function (err) { // we mistype something in css, plumber plugin will trigger and display where the error was
+			console.log('Styles Task Error'); 
+			console.log(err); // because we use plumber if we trigger an error it won't break our console any won't need to restart
+			this.emit('end');
+		}))
+.pipe(sourcemaps.init()) // ** before we uglify and concatenate we call write
+.pipe(uglify()) // uglify ==> get rid of the white space
+.pipe(concat('newscripts.js')) // compressing selected files into this newscripts.js file
+.pipe(sourcemaps.write()) // ** after we uglify and concatenate we call write
 .pipe(gulp.dest(DEST_PATH)) // compressing selected files into this folder
 .pipe(liveReload()); // Telling gulp to reload browser when compression is complete
 });
-
 
 // Images
 gulp.task("images", () => {
 console.log("Starting images task");
 });
+
+
+// Clean
+gulp.task('clean', () => {
+return del.sync([DEST_PATH]); // array of paths I want to remove // deletes dist folder 
+});
+
+
+// Zip files
+gulp.task('export', () => {
+return gulp.src(['web-info/**/*', 'resources/**/*'])
+.pipe(zip('website.zip'))
+.pipe(gulp.dest('./')); // export everything from web-info and resorces into source directory zip file website.zip
+});
+
 
 gulp.task('watch', () => {
 console.log("Gulp is watching");
@@ -73,7 +97,8 @@ gulp.watch(SCRIPTS_PATH, ['scripts']); // in this path, run this (scripts) task 
 gulp.watch(STYLES_PATH, ['styles']); // --> array of tasks (task names) we want to watch. in this case only scripts
 });
 
+
 // Default task -- no need to type default like with other tasks
-gulp.task('default', () => {
+gulp.task('default', ['html', 'styles', 'scripts', 'watch'], () => { // Will run what's inside [] when we run default task (just type gulp)
 console.log("Starting default task");
 });
