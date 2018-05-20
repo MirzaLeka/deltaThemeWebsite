@@ -24,7 +24,7 @@ body{
 }
 
 .customCSS p{
-font-size: 16px;
+font-size: 16px !important;
 }
 
 @media only screen and (max-width: 768px) {
@@ -46,3 +46,10 @@ font-size: 16px;
 
 }
 
+.didYouFind{
+    text-align: center;
+	margin: 0 auto;
+    display: block;
+    border: 1px solid #AAA;
+    padding-bottom: 10px;
+}

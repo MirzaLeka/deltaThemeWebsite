@@ -33,12 +33,11 @@ text-transform: uppercase;
 .signInBtn{
     background-color: #FFF;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .23), inset 1px 1px 0 0 hsla(0, 0%, 100%, .2);
-    padding: 10px 0;
+    padding: 10px 10px;
     text-align: center;
     height: 41px;
     border-radius: 20%;
     font-weight: 500;
-    width: 100px;
     display: inline-block;
     color: #000;
     text-decoration: none;
@@ -104,7 +103,6 @@ text-transform: uppercase;
     display: inline-block;
     padding: 0 11px;
     line-height: 23px;
-    font-family: 'Roboto', sans-serif;
     letter-spacing: 0;
     color: inherit;
     border: none;
@@ -156,7 +154,6 @@ text-transform: uppercase;
 
 .profile-links {
     font-size: 12px;
-    font-family: 'Roboto', sans-serif;
     border-bottom: 1px solid #e9e9e9;
     box-sizing: border-box;
     display: block;
