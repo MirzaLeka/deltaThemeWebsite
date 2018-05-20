@@ -10,6 +10,7 @@ const plumber = require('gulp-plumber');
 const sourcemaps = require('gulp-sourcemaps');
 const del = require('del');
 const zip = require('gulp-zip');
+const babel = require('gulp-babel');
 
 const STYLES_PATH = 'resources/css/**/*.css';
 const SCRIPTS_PATH = 'resources/js/**/*.js'; // grabs js inside of folders inside of /js folder
@@ -64,6 +65,7 @@ return gulp.src(SCRIPTS_PATH) // all JS files resources/js/*.js  // replace with
 .pipe(uglify()) // uglify ==> get rid of the white space
 .pipe(concat('newscripts.js')) // compressing selected files into this newscripts.js file
 .pipe(sourcemaps.write()) // ** after we uglify and concatenate we call write
+  //  .pipe(babel())
 .pipe(gulp.dest(DEST_PATH)) // compressing selected files into this folder
 .pipe(liveReload()); // Telling gulp to reload browser when compression is complete
 });

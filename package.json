@@ -10,9 +10,12 @@
   "author": "Mirza",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^7.0.1",
     "gulp-concat": "^2.6.0",
     "gulp-html": "^0.5.0",
     "gulp-htmlmin": "^4.0.0",
@@ -32,5 +35,8 @@
     "jquery": "^3.2.1",
     "npm": "^6.0.1",
     "static-server": "^2.0.0"
+  },
+  "babel": {
+    "presets": ["es2015"]
   }
 }
