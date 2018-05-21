@@ -18,11 +18,6 @@
 </head>
 <body>
 
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
                       <!-- NAVBAR -->
 
                       <div id="main"> 
@@ -34,16 +29,20 @@
 
                        <div class="navbar col-sm-12">
 
-                        <div class="col-sm-3">WEBSITE</div>
+                        <div class="col-sm-3">
+                          <h4>WEBSITE</h4>
+                        </div>
                         <div class="col-sm-6"> 
                         
                 	<div class="input-group">
-									<span class="input-group-addon"><i id="searchIcon" class="fa fa-search" aria-hidden="true"></i></span>
+									<span class="input-group-addon" style="background: transparent;"><i id="searchIcon" class="fa fa-search" aria-hidden="true"></i></span>
 									<input type="text" class="searchInput form-control" placeholder="Search">
 								 </div>
                           
                         </div>
-                        <div class="col-sm-3"> <button> BUTTON </button> </div>
+                        <div class="col-sm-3"> 
+                        <button class="btn signInBtn">Sign In</button>  
+                        </div>
 
                         
                       </div>
@@ -69,7 +68,7 @@
         <div class="container" style="background-color: transparent;">
                 <div class="jumbotron" style="background-color: transparent;">
                   <div class="row">
-                    <div class="col-xs-12" style="background: #eee;">
+                    <div class="col-xs-12" id="homeLastChildContent">
 
 
       <!--          <h3 style="margin:0px;"><span class="smallnav menu" onclick="openNav()">☰ DELTA THEME</span></h3>
@@ -89,70 +88,78 @@
 
                             <div class="container-fluid">
                                     <div class="row content">
-                                      <div class="col-sm-4 sidenav hidden-xs" style="background: transparent;">
+                                      <div class="col-sm-3 sidenav hidden-xs" style="background: #eeefff;">
                                         <ul class="nav nav-pills nav-stacked">
-<li> Home </li>
-<li> Community </li>
-<li> Submit a request </li>
+
+<br>                                          
+<li> <button class="btn signInBtn"> English (US) <i class="fa fa-chevron-down"></i></button>   </li>
+<br> 
+<li> <i class="fa fa-home" aria-hidden="true"></i> Home </li>
+<li> <i class="fa fa-users" aria-hidden="true"></i> Community </li>
+<li> <i class="fa fa-upload" aria-hidden="true"></i> Submit a request </li>
+<br>
 <li> Getting Started </li>
-<li> GENERAL INFORMATION </li>
-<li> What is Lotus Themes? 😊 </li>
-<li> Products and services pricing </li>
-<li> Products and services support </li>
-<li> Zendesk partnership </li>
-<li> Information for non-developers </li>
-<li> THEMES </li>
-<li> What can be changed? </li>
-<li> Home page options </li>
-<li> Terms of Service </li>
-<li> Themes compatibility </li>
-<li> How themes affect content? </li>
-<li> Multilingual support </li>
-<li> SERVICES </li>
-<li> Branding service FAQ </li>
-<li> Customization service FAQ </li>
-<li> Installation service FAQ </li>
+<li class="sidebarUppercase"> GENERAL INFORMATION </li>
+<li> <a class="sidebarAnchor" href="#">What is Lotus Themes? 😊 </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Products and services pricing </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Products and services support </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Zendesk partnership </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Information for non-developers </a> </li>
+<li class="sidebarUppercase"> THEMES </li>
+<li> <a class="sidebarAnchor" href="#"> What can be changed? </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Home page options </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Terms of Service </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Themes compatibility </a> </li>
+<li> <a class="sidebarAnchor" href="#"> How themes affect content? </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Multilingual support </a> </li>
+<li class="sidebarUppercase"> SERVICES </li>
+<li> <a class="sidebarAnchor" href="#"> Branding service FAQ </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Customization service FAQ </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Installation service FAQ </a> </li>
+<br>
 <li> Purchasing Questions </li>
-<li> BEFORE THE PURCHASE </li>
-<li> Refund policy </li>
-<li> Demo Help Centers </li>
-<li> Immediate access to the template </li>
-<li> PURCHASING PROCESS </li>
-<li> Payments </li>
-<li> Payments security </li>
+<li class="sidebarUppercase"> BEFORE THE PURCHASE </li>
+<li> <a class="sidebarAnchor" href="#"> Refund policy </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Demo Help Centers </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Immediate access to the template </a> </li>
+<li class="sidebarUppercase"> PURCHASING PROCESS </li>
+<li> <a class="sidebarAnchor" href="#"> Payments </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Payments security </a> </li>
+<br>
 <li> Usage Guides </li>
-<li> TECHNICAL GUIDES </li>
-<li> Theme installation </li>
-<li> FORMATTING CONTENT </li>
-<li> Formatting content 🎨 </li>
-<li> Accordions </li>
-<li> Codes </li>
-<li> Callout blocks </li>
-<li> Description lists </li>
-<li> Font Awesome icons </li>
-<li> Font sizes </li>
-<li> Images </li>
-<li> Links </li>
-<li> Lists </li>
-<li> Tables </li>
-<li> Tabs </li>
-<li> Text styles </li>
-<li> Quotes </li>
-<li> Videos </li>
+<li class="sidebarUppercase"> TECHNICAL GUIDES </li>
+<li> <a class="sidebarAnchor" href="#"> Theme installation </a> </li>
+<li class="sidebarUppercase"> FORMATTING CONTENT </li>
+<li> <a class="sidebarAnchor" href="#"> Formatting content 🎨 </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Accordions </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Codes </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Callout blocks </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Description lists </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Font Awesome icons </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Font sizes </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Images </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Links </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Lists </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Tables </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Tabs </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Text styles </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Quotes </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Videos </a> </li>
+<br>
 <li> Troubleshooting </li>
-<li> PAYMENT & PURCHASE TROUBLESHOOTING </li>
-<li> Wrong email address </li>
-<li> Download link is broken </li>
-<li> Download link is not received </li>
-<li> Card was overcharged </li>
-<li> Wrong theme has been purchased </li>
-<li> THEME USAGE TROUBLESHOOTING </li>
-<li> Template files are lost </li>
-<li> A bug is found </li>
+<li class="sidebarUppercase"> PAYMENT & PURCHASE TROUBLESHOOTING </li>
+<li> <a class="sidebarAnchor" href="#"> Wrong email address </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Download link is broken </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Download link is not received </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Card was overcharged </a> </li>
+<li> <a class="sidebarAnchor" href="#"> Wrong theme has been purchased </a> </li>
+<li class="sidebarUppercase"> THEME USAGE TROUBLESHOOTING </li>
+<li> <a class="sidebarAnchor" href="#"> Template files are lost </a> </li>
+<li> <a class="sidebarAnchor" href="#"> A bug is found </a> </li>
                                         </ul><br>
                                       </div>
                                   
-                                      <div class="col-sm-8 col-xs-12">
+                                      <div class="col-sm-9 col-xs-12">
 
                                         <h2>Help Center</h2>
                                         <p>Subtitle</p>
