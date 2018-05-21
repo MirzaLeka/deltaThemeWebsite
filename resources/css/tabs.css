@@ -1,7 +1,5 @@
 .tab {
     overflow: hidden;
-    border: 1px solid #ccc;
-	background-color: #f1f1f1;
 	text-align: center;
 	margin: 0 auto;
 	display: block;
@@ -24,22 +22,22 @@
 .tab button {
     background-color: inherit;
     float: left;
-    border: none;
     outline: none;
+    border: none;
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
     font-size: 17px;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-    background-color: #ddd;
+    border-bottom: 1px solid #ccc;
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-    background-color: #ccc;
+  border: 1px solid #ccc;
+  border-top-left-radius: 0.5pc;
+  border-top-right-radius: 0.5pc;
+  border-bottom: none;
+  cursor: default;
 }
 
 /* Style the tab content */

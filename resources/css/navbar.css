@@ -24,9 +24,29 @@ margin-top: -48px;
  float: left;
 }
 
+.input-group{
+    width: 70%;
+}
+
+.input-group-addon{
+    background: transparent;
+    border-bottom-left-radius: 500px;
+    border-top-left-radius: 500px;
+    border-right: none;
+}
+
 .searchInput{
-    width: 80%;
-    border-radius: 500px;
+    border-left: none;
+    border-bottom-right-radius: 500px;
+    border-top-right-radius: 500px;
+}
+
+.searchInput:focus{
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
 }
 
 .signInBtn{

@@ -13,7 +13,7 @@ body{
 
 .customCSS{
     border: 1px solid #ccc;
-    border-radius: 1pc;
+    border-radius: 0.5pc;
     margin-top: 20px;
     display: inline-block;
     height: 150px;
@@ -80,7 +80,8 @@ a:hover{
     text-align: center;
 	margin: 0 auto;
     display: block;
-    border: 1px solid #AAA;
+    border: 1px solid #ccc;
+    border-radius: 0.5pc;
     padding-bottom: 10px;
 }
 
