@@ -15,6 +15,7 @@
   <link rel="stylesheet" type="text/css" href="../resources/dist/newstyle.css">
   <link rel="stylesheet" type="text/css" href="../resources/css/navbar.css">
   <link rel="stylesheet" type="text/css" href="../resources/css/tabs.css">
+  <link rel="stylesheet" type="text/css" href="../resources/css/modal.css">
 </head>
 <body>
 
@@ -41,7 +42,7 @@
                           
                         </div>
                         <div class="col-sm-2"> 
-                        <button style="float: right;" class="btn signInBtn">Sign In <i class="fa fa-user-o" aria-hidden="true"></i></button>  
+                        <button style="float: right;" id="openModalBtn" class="btn signInBtn">Sign In <i class="fa fa-user-o" aria-hidden="true"></i></button>  
                         </div>
 
                         
@@ -186,9 +187,78 @@
                 </div>
         </div>
 
+
+<!-- MODAL -->
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+
+     <div class="modal-header">
+            <span class="close">&times;</span>
+        </div>
+        
+        <div class="modal-body">
+
+    <!--- Within Modal-->
+          <h4>Delta theme login</h4>
+          <br>
+          <input type="text" placeholder="username"/>
+          <br>
+          <input type="text" placeholder="password"/>
+           <br>
+           <button class="btn">Continue</button> 
+                        
+                        
+           </div>
+                  </div>
+              </div>
+           
+        <!-- / modal -->
+
+
+
 </body>
 
 <script>
+
+/// modal ///
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("openModalBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+function closeModal() {
+  modal.style.display = "none";
+}
+
+/// tabs ///
 
 function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
@@ -206,9 +276,9 @@ function openCity(evt, cityName) {
 
   </script>
 
+<scirpt src="../resources/js/modal.js"></scirpt>      
 <scirpt src="../resources/js/tabs.js"></scirpt>      
 <scirpt src="../resources/js/navbar.js"></scirpt>
 <script src="../resources/js/scripts.js"></script>
-<script src="../resources/dist/test.js"></script>
 <script src="http://localhost:35729/livereload.js"></script>
 </html>
