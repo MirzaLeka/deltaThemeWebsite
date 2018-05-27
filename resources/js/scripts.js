@@ -20,8 +20,8 @@ for(var i = 0; i < arrayTitle.length; i++) {
     + "<img class='containerImg' src='../resources/img/arrowImg.png' />"
     + "</div>"
     + "<div class='col-sm-9'>"
-    +  "<h3>" + arrayTitle[i] + "</h3>"
-    + "<p>" + arraySubT[i] + "</p>"
+    + "<h3 class='arrayTAndS'>" + arrayTitle[i] + "</h3>"
+    + "<p class='arrayTAndS'>" + arraySubT[i] + "</p>"
     + "</div>"
     + "</div>";
 }

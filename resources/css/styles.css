@@ -17,6 +17,11 @@ body{
     margin-top: 20px;
     display: inline-block;
     height: 150px;
+    cursor: pointer;
+}
+
+.customCSS:hover h3, .customCSS:hover p{
+    color: #007BFF;
 }
 
 .containerImg{
@@ -63,9 +68,18 @@ font-size: 16px !important;
      )
 }
 
+.sidebarImg{
+    margin-left: -200px;
+}
+
+.topAnchor{
+    color: #90a4ae;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .sidebarAnchor{
     padding-left: 0px !important;
-    padding-top: 5px !important;
 }
 
 a:hover{
