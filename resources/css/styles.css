@@ -1,4 +1,8 @@
 
+html, body{
+    overflow-x: none;
+}
+
 body{
     justify-content: center;
      background: linear-gradient(
@@ -114,3 +118,7 @@ a:hover{
     padding-bottom: 10px;
 }
 
+.empty{
+    height: 450px;
+    width: 100%;
+}

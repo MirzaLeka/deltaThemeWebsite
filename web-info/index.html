@@ -248,6 +248,15 @@
 <br> <br>
 </div>
 
+<div class="empty">
+  </div>
+  
+  <ul>
+  <li>FACEOOK</li>
+  <li>FACEOOK</li>
+  <li>FACEOOK</li>
+  
+  </ul>
                                 
                                       </div>
                                     </div>
@@ -255,6 +264,7 @@
 
 
 
+<!-- / End of container-->
 </div>
 </div>
                 </div>
@@ -270,21 +280,61 @@
   <!-- Modal content -->
   <div class="modal-content">
 
-     <div class="modal-header">
-            <span class="close">&times;</span>
-        </div>
-        
+
         <div class="modal-body">
 
-    <!--- Within Modal-->
-          <h4>Delta theme login</h4>
-          <br>
-          <input type="text" placeholder="username"/>
-          <br>
-          <input type="text" placeholder="password"/>
-           <br>
-           <button class="btn">Continue</button> 
-                        
+            <div class="container-fluid bg-3 text-center">    
+      
+                <div class="row">
+                  <div class="col-sm-12">
+
+                      <div class="main-login main-center">
+                          <form class="form-horizontal">
+
+                      <h4>Sign in to Delta Theme Demo</h4>
+                      <br>
+                      <div class="form-group">
+                         
+                            <div class="input-group-modal">   
+                              <input type="text" class="form-control" name="name" id="name" placeholder="username">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                         
+                            <div class="input-group-modal">   
+                              <input type="text" class="form-control" name="password" id="password" placeholder="pasword">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                         
+                            <div class="input-group-modal">   
+
+                                <button class="btn modal-btn">Sign in</button> 
+                                <br>
+                                <p style="font-size: 10px; color: #AAA; margin-top: 10px;">Your credentials will be sent over a secure connection</p>     
+                                <p id="closeModal" style="font-size: 12px; color: #AAA;"><a href="#" style="text-decoration: none !important; color: #AAA !important;">Cancel</a></p>     
+                                <p style="font-size: 12px; color: #AAA;"><a href="#" style="text-decoration: none !important; color: #AAA !important;">Forgot my password</a></p> 
+       
+                           
+                            </div>
+                        </div>
+            
+          
+                         </form>
+                         </div>
+                   
+                  </div>
+                </div>
+              </div>
+
+    <p  style="font-size: 12px;">
+        New to Delta Theme Demo? <a href="#">Sign up</a> <br>
+        Have you emailed us?  <a href="#">Get a password</a>  <br></p>
+        
+        <p style="font-size: 12px; color: #AAA;">If you've communicated with our support staff through email previously, you're already registered. You probably don't have a password yet, though.
+    </p>
                         
            </div>
                   </div>
@@ -307,17 +357,28 @@ var modal = document.getElementById('myModal');
 var btn = document.getElementById("openModalBtn");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+ //var span = document.getElementsByClassName("close")[0];
+
+$("#closeModal").click(function() {
+  modal.style.display = "none";
+  $("body").css({
+      overflowY: "auto"
+    });
+});
+//
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
     modal.style.display = "block";
+    $("body").css({
+      overflowY: "hidden"
+    });
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+/*span.onclick = function() {
     modal.style.display = "none";
-}
+} */
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
