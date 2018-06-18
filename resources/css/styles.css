@@ -70,6 +70,18 @@ font-size: 16px !important;
         margin-top: 10px;
     }
 
+    .empty{
+        display: none;
+    }
+
+    .footer{
+        margin-top: 20px;
+    }
+
+    .footerIcons li, .footerInfo li{
+        font-size: 10px;
+    }
+
 }
 
 #homeLastChildContent{
@@ -119,6 +131,34 @@ a:hover{
 }
 
 .empty{
-    height: 450px;
+    height: 465px;
     width: 100%;
+}
+
+.footer{
+    background: white;
+    height: 100%;
+    width: 100%;
+}
+
+.footerIcons, .footerInfo{
+    list-style-type: none;
+}
+
+.footerIcons li, .footerInfo li{
+    float: left;
+    padding-right: 20px;
+}
+
+.footerIcons li:last-child, .footerInfo li:last-child{
+    padding-right: 0px;
+}
+
+.anchorSettings{
+    text-decoration: none !important;
+    color: #AAA !important;
+}
+
+.anchorSettings:hover{
+    color: #029be5 !important;
 }
