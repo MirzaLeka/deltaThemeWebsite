@@ -10,12 +10,17 @@ const plumber = require('gulp-plumber');
 const sourcemaps = require('gulp-sourcemaps');
 const del = require('del');
 const zip = require('gulp-zip');
-const babel = require('gulp-babel');
+var babel = require('gulp-babel');
+const imagemin = require('gulp-imagemin');
+const imageminJpg = require("imagemin-jpeg-recompress");
+const imageminPng = require("imagemin-pngquant");
 
-const STYLES_PATH = 'resources/css/**/*.css';
-const SCRIPTS_PATH = 'resources/js/**/*.js'; // grabs js inside of folders inside of /js folder
-const DEST_PATH = 'resources/dist'; // route where all our compiled files will be stored
-const HTML_PATH = 'web-info/**/*.html';
+const STYLES_PATH = 'Resources/css/**/*.css';
+const SCRIPTS_PATH = 'Resources/js/**/*.js'; 
+const DEST_PATH = 'Resources/dist';
+const HTML_PATH = 'Web-Info/**/*.html';
+const IMG_PATH = 'Resources/img/**/*';
+const IMG_DEST = 'Resources/dist/img'
 
 // HTML
 gulp.task('html', () => {
@@ -29,56 +34,76 @@ return gulp.src(HTML_PATH)
 
 // Styles
 gulp.task('styles', () => {
-console.log("Starting styles task"); /* To tun this task type gulp & name of the task, in this case styles, so it will be gulp styles  */
+console.log("Starting styles task"); 
  
 return gulp.src(STYLES_PATH)
-		.pipe(plumber(function (err) { // we mistype something in css, plumber plugin will trigger and display where the error was
+		.pipe(plumber(function (err) { 
 			console.log('Styles Task Error'); 
-			console.log(err.toString()); // because we use plumber if we trigger an error it won't break our console any won't need to restart
+			console.log(err.toString()); 
 			this.emit('end');
 		}))
-        .pipe(sourcemaps.init()) // ** we initialize srouce maps befoe fixes and concat
-        .pipe(autoPrefixer({ // creates fixes for our css to fit every brwoser's needs
-    // browsers: ['last 2 versions', 'ie 8'] // or we can specifily say autoprefix Only for last 2 versions of all modern browsers
-})) // and also internet exp 8
-.pipe(concat('newstyle.css')) // name of the new file we're creating
-.pipe(minifyCss()) // this will compress our CSS file and remove all empty lines and spacing == better performance
-.pipe(sourcemaps.write()) // ** and we finish here before place compressed files into dist folder. 
-// With sourcemaps we can see original css maps in chrome dev tools (inspect) rather than seeing all compressed in
-// one folder, as we did in dist folder which we imported in index.html
+        .pipe(sourcemaps.init()) 
+        .pipe(autoPrefixer({ 
+})) 
+.pipe(minifyCss()) 
+.pipe(sourcemaps.write()) 
 .pipe(gulp.dest(DEST_PATH))
 .pipe(liveReload());
 });
 
 
 // Scripts
-gulp.task("scripts", () => {
-console.log("Starting scripts task");
+gulp.task('scripts', function () {
+	console.log('Starting scripts task');
 
-return gulp.src(SCRIPTS_PATH) // all JS files resources/js/*.js  // replace with SCRIPTS_PATH
-	.pipe(plumber(function (err) { // we mistype something in css, plumber plugin will trigger and display where the error was
-			console.log('Styles Task Error'); 
-			console.log(err); // because we use plumber if we trigger an error it won't break our console any won't need to restart
+	return gulp.src(SCRIPTS_PATH)
+		.pipe(plumber(function (err) {
+			console.log('Scripts Task Error');
+			console.log(err);
 			this.emit('end');
 		}))
-.pipe(sourcemaps.init()) // ** before we uglify and concatenate we call write
-.pipe(uglify()) // uglify ==> get rid of the white space
-.pipe(concat('newscripts.js')) // compressing selected files into this newscripts.js file
-.pipe(sourcemaps.write()) // ** after we uglify and concatenate we call write
-  //  .pipe(babel())
-.pipe(gulp.dest(DEST_PATH)) // compressing selected files into this folder
-.pipe(liveReload()); // Telling gulp to reload browser when compression is complete
+		.pipe(sourcemaps.init())
+		.pipe(babel({
+			presets: ['es2015']
+		}))
+		.pipe(uglify())	
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest(DEST_PATH))
+		.pipe(liveReload());
 });
 
-// Images
-gulp.task("images", () => {
-console.log("Starting images task");
-});
+
+
+//Images
+gulp.task('images', () => {
+	console.log("Starting images task");
+	gulp.src(IMG_PATH)
+	.pipe(imagemin(
+		[
+			imagemin.gifsicle({interlaced: true}),
+			imagemin.jpegtran({progressive: true}),
+			imagemin.optipng({optimizationLevel: 1}),
+			imagemin.svgo({
+				plugins: [
+					{removeViewBox: true},
+					{cleanupIDs: false}
+				]}),
+
+			imageminJpg({
+				quality: "low",
+				min: 40,
+				max: 60
+			}),
+			imageminPng({})
+		]
+	))
+	.pipe(gulp.dest(IMG_DEST));
+	});
 
 
 // Clean
 gulp.task('clean', () => {
-return del.sync([DEST_PATH]); // array of paths I want to remove // deletes dist folder 
+return del.sync([DEST_PATH]); 
 });
 
 
@@ -86,21 +111,21 @@ return del.sync([DEST_PATH]); // array of paths I want to remove // deletes dist
 gulp.task('export', () => {
 return gulp.src(['web-info/**/*', 'resources/**/*'])
 .pipe(zip('website.zip'))
-.pipe(gulp.dest('./')); // export everything from web-info and resorces into source directory zip file website.zip
+.pipe(gulp.dest('./')); 
 });
 
 
 gulp.task('watch', () => {
 console.log("Gulp is watching");
-require('./server.js'); // starts server. We're doing this before we run watch
+require('./server.js'); 
 liveReload.listen();
-gulp.watch('web-info/index.html', ['html']);
-gulp.watch(SCRIPTS_PATH, ['scripts']); // in this path, run this (scripts) task we created earlier
-gulp.watch(STYLES_PATH, ['styles']); // --> array of tasks (task names) we want to watch. in this case only scripts
+gulp.watch(HTML_PATH, ['html']);
+gulp.watch(STYLES_PATH, ['styles']); 
+gulp.watch(SCRIPTS_PATH, ['scripts']); 
+gulp.watch(IMG_PATH, ['images']); 
 });
 
 
-// Default task -- no need to type default like with other tasks
-gulp.task('default', ['html', 'styles', 'scripts', 'watch'], () => { // Will run what's inside [] when we run default task (just type gulp)
+gulp.task('default', ['html', 'styles', 'scripts', 'images', 'watch'], () => { 
 console.log("Starting default task");
 });

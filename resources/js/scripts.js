@@ -17,7 +17,7 @@ var containerContent = '';
 for(var i = 0; i < arrayTitle.length; i++) {
   containerContent += "<div class='col-sm-6 customCSS'>"
     + "<div class='col-sm-3'>"
-    + "<img class='containerImg' src='../resources/img/arrowImg.png' />"
+    + "<img class='containerImg' src='../resources/dist/img/arrowImg.png' />"
     + "</div>"
     + "<div class='col-sm-9'>"
     + "<h3 class='arrayTAndS'>" + arrayTitle[i] + "</h3>"
