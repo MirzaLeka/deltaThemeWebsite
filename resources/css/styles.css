@@ -10,6 +10,17 @@ body{
      )
 }
 
+@media only screen and (max-width: 768px) {
+    body {
+        background: #FFF;
+    }
+
+    #homeLastChildContent{
+        background: #FFF !important;
+        margin-top: -10px !important;
+    }
+}
+
 
 .customCSS{
     border: 1px solid #ccc;
@@ -88,6 +99,10 @@ a:hover{
 
 .sidebarUppercase{
     color: #AAA;
+}
+
+.tabParagraph{
+    font-size: 12px !important;
 }
 
 .didYouFind{
