@@ -1,164 +1,114 @@
+html, body {
+  overflow-x: none; }
 
-html, body{
-    overflow-x: none;
-}
-
-body{
-    justify-content: center;
-     background: linear-gradient(
-    to right, 
-    #eeefff 0%, 
-    #eeefff 50%, 
-    #fff 50%, 
-    #fff 100%
-     )
-}
+body {
+  justify-content: center;
+  background: linear-gradient(to right, #eeefff 0%, #eeefff 50%, #fff 50%, #fff 100%); }
 
 @media only screen and (max-width: 768px) {
-    body {
-        background: #FFF;
-    }
+  body {
+    background: #FFF; }
 
-    #homeLastChildContent{
-        background: #FFF !important;
-        margin-top: -10px !important;
-    }
-}
+  #homeLastChildContent {
+    background: #FFF !important;
+    margin-top: -10px !important; } }
+.customCSS {
+  border: 1px solid #ccc;
+  border-radius: 0.5pc;
+  margin-top: 20px;
+  display: inline-block;
+  height: 150px;
+  cursor: pointer; }
 
+.customCSS:hover h3, .customCSS:hover p {
+  color: #007BFF; }
 
-.customCSS{
-    border: 1px solid #ccc;
-    border-radius: 0.5pc;
-    margin-top: 20px;
-    display: inline-block;
-    height: 150px;
-    cursor: pointer;
-}
+.containerImg {
+  height: 50px;
+  width: 50px;
+  margin-top: 25px; }
 
-.customCSS:hover h3, .customCSS:hover p{
-    color: #007BFF;
-}
-
-.containerImg{
-    height: 50px;
-    width: 50px;
-    margin-top: 25px;
-}
-
-.customCSS h3{
-
-}
-
-.customCSS p{
-font-size: 16px !important;
-}
+.customCSS p {
+  font-size: 16px !important; }
 
 @media only screen and (max-width: 768px) {
-
-    .customCSS h3, .customCSS p, .containerImg{
-        text-align: center;
-        margin: auto;
-        display: block;
-    }
-
-    .customCSS{
-        height: 120px; /*Use % instead */
-        width: 100%;
-    }
-
-    .containerImg{
-        margin-top: 10px;
-    }
-
-    .empty{
-        display: none;
-    }
-
-    .footer{
-        margin-top: 20px;
-    }
-
-    .footerIcons li, .footerInfo li{
-        font-size: 10px;
-    }
-
-}
-
-#homeLastChildContent{
-     margin-top: -48px;
-     background: linear-gradient(
-    to right, 
-    #eeefff 0%, 
-    #eeefff 10%, 
-    #fff 10%, 
-    #fff 100%
-     )
-}
-
-.sidebarImg{
-    margin-left: -200px;
-}
-
-.topAnchor{
-    color: #90a4ae;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.sidebarAnchor{
-    padding-left: 0px !important;
-}
-
-a:hover{
-    background: transparent !important;
-}
-
-.sidebarUppercase{
-    color: #AAA;
-}
-
-.tabParagraph{
-    font-size: 12px !important;
-}
-
-.didYouFind{
+  .customCSS h3, .customCSS p, .containerImg {
     text-align: center;
-	margin: 0 auto;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 0.5pc;
-    padding-bottom: 10px;
-}
+    margin: auto;
+    display: block; }
 
-.empty{
-    height: 465px;
-    width: 100%;
-}
+  .customCSS {
+    height: 120px;
+    /*Use % instead */
+    width: 100%; }
 
-.footer{
-    background: white;
-    height: 100%;
-    width: 100%;
-}
+  .containerImg {
+    margin-top: 10px; }
 
-.footerIcons, .footerInfo{
-    list-style-type: none;
-}
+  .empty {
+    display: none; }
 
-.footerIcons li, .footerInfo li{
-    float: left;
-    padding-right: 20px;
-}
+  .footer {
+    margin-top: 20px; }
 
-.footerIcons li:last-child, .footerInfo li:last-child{
-    padding-right: 0px;
-}
+  .footerIcons li, .footerInfo li {
+    font-size: 10px; } }
+#homeLastChildContent {
+  margin-top: -48px;
+  background: linear-gradient(to right, #eeefff 0%, #eeefff 10%, #fff 10%, #fff 100%); }
 
-.anchorSettings{
-    text-decoration: none !important;
-    color: #AAA !important;
-}
+.sidebarImg {
+  margin-left: -200px; }
 
-.anchorSettings:hover{
-    color: #029be5 !important;
-}
+.topAnchor {
+  color: #90a4ae;
+  text-decoration: none;
+  cursor: pointer; }
+
+.sidebarAnchor {
+  padding-left: 0px !important; }
+
+a:hover {
+  background: transparent !important; }
+
+.sidebarUppercase {
+  color: #AAA; }
+
+.tabParagraph {
+  font-size: 12px !important; }
+
+.didYouFind {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 0.5pc;
+  padding-bottom: 10px; }
+
+.empty {
+  height: 465px;
+  width: 100%; }
+
+.footer {
+  background: white;
+  height: 100%;
+  width: 100%; }
+
+.footerIcons, .footerInfo {
+  list-style-type: none; }
+
+.footerIcons li, .footerInfo li {
+  float: left;
+  padding-right: 20px; }
+
+.footerIcons li:last-child, .footerInfo li:last-child {
+  padding-right: 0px; }
+
+.anchorSettings {
+  text-decoration: none !important;
+  color: #AAA !important; }
+
+.anchorSettings:hover {
+  color: #029be5 !important; }
+
+/*# sourceMappingURL=styles.css.map */

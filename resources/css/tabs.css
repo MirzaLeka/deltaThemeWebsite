@@ -1,35 +1,30 @@
 .tab {
-    overflow: hidden;
-	text-align: center;
-	margin: 0 auto;
-	display: block;
-	width: 100%;
-}
+  overflow: hidden;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  width: 100%; }
 
-.tablinks{
-	width: 50%;
-}
+.tablinks {
+  width: 50%; }
 
-#London, #Paris{
-	text-align: center;
-}
+#London, #Paris {
+  text-align: center; }
 
-#London{
-	display: block;
-}
+#London {
+  display: block; }
 
 /* Style the buttons inside the tab */
 .tab button {
-    background-color: inherit;
-    float: left;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-    border-bottom: 1px solid #ccc;
-}
+  background-color: inherit;
+  float: left;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  border-bottom: 1px solid #ccc; }
 
 /* Create an active/current tablink class */
 .tab button.active {
@@ -37,24 +32,25 @@
   border-top-left-radius: 0.5pc;
   border-top-right-radius: 0.5pc;
   border-bottom: none;
-  cursor: default;
-}
+  cursor: default; }
 
 /* Style the tab content */
 .tabcontent {
-    display: none;
-    padding: 6px 12px;
-    -webkit-animation: fadeEffect 1s;
-    animation: fadeEffect 1s;
-}
+  display: none;
+  padding: 6px 12px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s; }
 
 /* Fade in tabs */
 @-webkit-keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 @keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+/*# sourceMappingURL=tabs.css.map */
